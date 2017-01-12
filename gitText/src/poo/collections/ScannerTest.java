@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class ScannerTest {
 
 	public static void main(String[] args) {
-		int suma=0;
+		float suma=0;
 		try {
 			Scanner sc=new Scanner(new FileInputStream("palabras2.txt"));
 			//sc.useDelimiter("\\s*bla\\s*");
@@ -19,8 +19,16 @@ public class ScannerTest {
 					System.out.println("Numero: " +x);
 					suma+=x;
 				}catch(InputMismatchException e){
-					//Serian letras
-					String x= sc.next();
+					try{//float
+						//System.out.println(sc.nextInt());
+						float x=sc.nextFloat();
+						System.out.println("Numero float: " +x);
+						suma+=x;
+					}catch(InputMismatchException e2){
+						//Serian letras
+						String x= sc.next();
+					}
+
 				}
 				
 			}

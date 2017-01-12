@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Diccionario {
 	Map<Character,List<String>> buffer;
@@ -26,7 +27,16 @@ public class Diccionario {
 			}
 			l.add(line);
 		}
-		
-
+	}
+	public void print(){
+		Set<Character> keys=buffer.keySet();
+		for(Character c:keys){
+			List<String> values=buffer.get(c);
+			System.out.println(c+"[");
+			for(String word:values){
+				System.out.println(word);
+			}
+			System.out.println("]");
+		}
 	}
 }
