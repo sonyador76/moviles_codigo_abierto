@@ -51,6 +51,10 @@ public class SetTest {
 			Racional r=it2.next();
 			System.out.println(r);
 		}
+		System.out.println(new String("Luis").hashCode());
+		System.out.println(new String("Luis").hashCode());
+		System.out.println(new String("Manuel").hashCode());
+		
 	}
 
 }
